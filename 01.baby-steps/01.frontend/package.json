@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@pact-foundation/pact": "^12.1.1"
+    "@pact-foundation/pact": "^12.1.1",
+    "@pact-foundation/pact-node": "^10.17.7",
+    "axios": "^1.6.2"
   }
 }
