@@ -55,7 +55,7 @@ describe('Pact with Our Provider', () => {
             // Make the request and assert the response
             return apiClient.get('/data2').then(response => {
                 expect(response.status).toBe(200);
-                expect(response.data).toEqual({ id: 1, name: 'Test Data2' });
+                expect(response.data).toEqual({ id: 1, name: 'Test Data 2' });
             });
         });
     });
