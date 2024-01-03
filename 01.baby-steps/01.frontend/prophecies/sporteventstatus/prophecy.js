@@ -1,8 +1,4 @@
-const { Matchers } = require('@pact-foundation/pact');
-const { like, term } = Matchers;
-
-const version = "1.0.3";
-const prophecy = {
+module.exports = {
     "subject": "vwmf:38973:123695:competition:1465009:match:135858816:sporteventstatus",
     "prophecy": [
         {
@@ -110,17 +106,3 @@ const prophecy = {
     "state": "active",
     "is_delta": false
 }
-const interaction = {
-    given: 'an initial  prophecy',
-    uponReceiving: 'a request for data',
-    withRequest: {
-        method: 'GET',
-        path: '/sporteventstatus'
-    },
-    willRespondWith: {
-        status: 200,
-        body: like(prophecy)
-    }
-}
-
-module.exports = { prophecy, interaction };

@@ -124,6 +124,145 @@
         "matchingRules": {
           "$.body": {
             "match": "type"
+          },
+          "$.body.prophecy[0].t": {
+            "match": "equality"
+          },
+          "$.body.prophecy[0].v.phase": {
+            "match": "equality"
+          },
+          "$.body.prophecy[1].v.phase": {
+            "match": "equality"
+          },
+          "$.body.subject": {
+            "match": "equality"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "a request for data",
+      "providerState": "initial-prophecy",
+      "request": {
+        "method": "GET",
+        "path": "/sporteventstatus"
+      },
+      "response": {
+        "body": {
+          "is_delta": false,
+          "next": 1704304870000,
+          "prophecy": [
+            {
+              "t": 1704304680000,
+              "v": {
+                "competition_id": 1465009,
+                "event_ids": [
+                  135858816
+                ],
+                "events_start_timestamp": 1704304690000,
+                "next_betstop": 1704304860000,
+                "next_competition_id": 1465009,
+                "next_event_ids": [
+                  135858817
+                ],
+                "next_unified_competition_id": "vf:season:1465009",
+                "next_unified_event_ids": [
+                  "vf:match:135858817"
+                ],
+                "phase": "live",
+                "unified_competition_id": "vf:season:1465009",
+                "unified_event_ids": [
+                  "vf:match:135858816"
+                ],
+                "unique_tournament_id": 38973
+              }
+            },
+            {
+              "t": 1704304780000,
+              "v": {
+                "competition_id": 1465009,
+                "event_ids": [
+                  135858816
+                ],
+                "events_start_timestamp": 1704304690000,
+                "next_betstop": 1704304860000,
+                "next_competition_id": 1465009,
+                "next_event_ids": [
+                  135858817
+                ],
+                "next_unified_competition_id": "vf:season:1465009",
+                "next_unified_event_ids": [
+                  "vf:match:135858817"
+                ],
+                "phase": "post",
+                "unified_competition_id": "vf:season:1465009",
+                "unified_event_ids": [
+                  "vf:match:135858816"
+                ],
+                "unique_tournament_id": 38973
+              }
+            },
+            {
+              "t": 1704304800000,
+              "v": {
+                "competition_id": 1465009,
+                "event_ids": [
+                  135858817
+                ],
+                "events_start_timestamp": 1704304870000,
+                "next_betstop": 1704304860000,
+                "next_competition_id": 1465009,
+                "next_event_ids": [
+                  135858818
+                ],
+                "next_unified_competition_id": "vf:season:1465009",
+                "next_unified_event_ids": [
+                  "vf:match:135858818"
+                ],
+                "phase": "pre",
+                "unified_competition_id": "vf:season:1465009",
+                "unified_event_ids": [
+                  "vf:match:135858817"
+                ],
+                "unique_tournament_id": 38973
+              }
+            },
+            {
+              "t": 1704304860000,
+              "v": {
+                "competition_id": 1465009,
+                "event_ids": [
+                  135858817
+                ],
+                "events_start_timestamp": 1704304870000,
+                "next_betstop": 1704305040000,
+                "next_competition_id": 1465009,
+                "next_event_ids": [
+                  135858818
+                ],
+                "next_unified_competition_id": "vf:season:1465009",
+                "next_unified_event_ids": [
+                  "vf:match:135858818"
+                ],
+                "phase": "live",
+                "unified_competition_id": "vf:season:1465009",
+                "unified_event_ids": [
+                  "vf:match:135858817"
+                ],
+                "unique_tournament_id": 38973
+              }
+            }
+          ],
+          "state": "active",
+          "subject": "vwmf:38973:123695:competition:1465009:match:135858816:sporteventstatus"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
           }
         },
         "status": 200
@@ -139,7 +278,7 @@
       "models": "1.1.11"
     },
     "pactSpecification": {
-      "version": "2.0.0"
+      "version": "1.1.0"
     }
   },
   "provider": {
