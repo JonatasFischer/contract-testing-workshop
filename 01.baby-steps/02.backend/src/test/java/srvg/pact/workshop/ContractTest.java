@@ -1,8 +1,10 @@
 package srvg.pact.workshop;
 
-import au.com.dius.pact.provider.junit.Provider;
-import au.com.dius.pact.provider.junit.loader.PactFolder;
+import au.com.dius.pact.core.model.annotations.PactFolder;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
+import au.com.dius.pact.provider.junitsupport.Provider;
+import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
+import au.com.dius.pact.provider.junitsupport.loader.PactBrokerAuth;
 import au.com.dius.pact.provider.spring.junit5.MockMvcTestTarget;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
@@ -13,10 +15,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 @Provider("SportEventStatusProphecyProducer")
-@PactFolder("pacts")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
-public class ContractTest {
+@PactBroker( url = "https://pactbroker.gaming-nonprod.sportradar.online/")
+class ContractTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -25,7 +27,7 @@ public class ContractTest {
     void before() {
         MockMvcTestTarget testTarget = new MockMvcTestTarget();
         testTarget.setControllers(new SportEventStatusController());
-        testTarget.setMockMvc(mockMvc);
+        testTarget.setMockMvc(this.mockMvc);
     }
 
     @TestTemplate
