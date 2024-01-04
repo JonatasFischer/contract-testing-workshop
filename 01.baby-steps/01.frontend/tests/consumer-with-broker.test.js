@@ -9,14 +9,6 @@ describe('Define pact with propefy', () => {
     let pactConfig = configurer('FirstMicroFrontend', 'SportEventStatusProphecyProducer');
     const provider = new PactV3(pactConfig);
 
-    //beforeAll(() => provider.setup());
-    // Finalize the Pact mock server after all tests and publish the contract
-    /*afterAll(async () => {
-        await provider.finalize();
-        return pactPublisher(intialStatusVersion);
-    }, 30000);
-    */
-
     //let's do our first test
     describe('when a request for data is made and I want something else saved', () => {
         //here we define the expected response

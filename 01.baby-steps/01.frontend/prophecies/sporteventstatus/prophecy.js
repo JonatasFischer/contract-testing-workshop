@@ -2,7 +2,7 @@ module.exports = {
     "subject": "vwmf:38973:123695:competition:1465009:match:135858816:sporteventstatus",
     "prophecy": [
         {
-            "t": 1704304680000,
+            "t": 1704304680000,///this mus 
             "v": {
                 "phase": "live",
                 "next_competition_id": 1465009,
