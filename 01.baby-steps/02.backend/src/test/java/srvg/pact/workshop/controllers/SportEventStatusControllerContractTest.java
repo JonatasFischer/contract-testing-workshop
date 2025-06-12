@@ -23,7 +23,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@PactBroker(url = "https://pactbroker.gaming-nonprod.sportradar.online/")
+@PactBroker(url = "${PACT_BROKER_URL:http://localhost:8080}")
 @VersionSelector()
 class SportEventStatusControllerContractTest {
 

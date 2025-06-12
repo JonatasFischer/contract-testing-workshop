@@ -1,11 +1,13 @@
 const path = require('path');
 const pact = require('@pact-foundation/pact-node');
-const pactDirs = path.resolve(process.cwd(), 'pacts')
-console.log(`Pact will be generated in ${pactDirs}`)
+const pactDirs = path.resolve(process.cwd(), 'pacts');
+const pactBrokerUrl = process.env.PACT_BROKER_URL || 'http://localhost:8080';
+console.log(`Pact will be generated in ${pactDirs}`);
+console.log(`Using Pact Broker at ${pactBrokerUrl}`);
 module.exports = {
     publisher: (version) => pact.publishPacts({
         pactFilesOrDirs: [pactDirs],
-        pactBroker: "https://pactbroker.gaming-nonprod.sportradar.online/",
+        pactBroker: pactBrokerUrl,
         consumerVersion: version
     }),
     configurer: (consumer, provider) => {
